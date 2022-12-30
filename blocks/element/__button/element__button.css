@@ -1,0 +1,10 @@
+.element__button {
+  width: 23px;
+  height: 20px;
+  border: none;
+  background: inherit;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../../../images/like.png);
+  margin: 30px 30px 30px auto;
+}
