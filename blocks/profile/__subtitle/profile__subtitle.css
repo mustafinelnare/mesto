@@ -1,5 +1,7 @@
 .profile__subtitle {
   font-size: 18px;
+  font-family: 'Inter';
   font-weight: 400;
+  margin: 16px auto 0;
   color: #FFFFFF;
 }
