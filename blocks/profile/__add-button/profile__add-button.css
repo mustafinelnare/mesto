@@ -13,3 +13,17 @@
 .profile__add-button:hover {
   opacity: 0.6;
 }
+
+@media screen and (max-width: 768px) {
+  .profile__add-button {
+    width: 282px;
+    margin: 36px auto 0;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .profile__add-button {
+    width: 282px;
+    margin: 36px auto 0;
+  }
+}
