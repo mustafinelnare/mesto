@@ -4,3 +4,15 @@
   color: #545454;
   margin: 0;
 }
+
+@media screen and (max-width: 650px) {
+  .footer__copyright {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .footer__copyright {
+    font-size: 14px;
+  }
+}
