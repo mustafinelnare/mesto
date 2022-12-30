@@ -11,6 +11,12 @@
   }
 }
 
+@media screen and (max-width: 920px) {
+  .profile {
+    max-width: 700px;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .profile {
     display: flex;
