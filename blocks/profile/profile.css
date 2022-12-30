@@ -4,3 +4,27 @@
   max-width: 880px;
   margin: 40px auto 0;
 }
+
+@media screen and (max-width: 1024px) {
+  .profile {
+    max-width: 880px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .profile {
+    display: flex;
+    flex-direction: column;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .profile {
+    display: flex;
+    flex-direction: column;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}
