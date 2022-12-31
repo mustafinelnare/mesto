@@ -1,10 +1,17 @@
 .element__button {
-  width: 23px;
-  height: 20px;
+  max-width: 22px;
+  width: 100%;
   border: none;
   background: inherit;
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url(../../../images/like.png);
+  background-image: url(../../../images/like.svg);
   margin: 30px 30px 30px auto;
+}
+
+.element__button:hover {
+  opacity: 0.5;
+  transition: 0.5s;
+  cursor: pointer;
 }
