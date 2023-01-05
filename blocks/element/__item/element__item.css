@@ -2,22 +2,7 @@
   display: flex;
   flex-direction: column;
   margin: 0;
-}
-
-@media screen and (max-width: 1024px) {
-  .element__item {
-
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .element__item {
-
-  }
-}
-
-@media screen and (max-width: 425px) {
-  .element__item {
-
-  }
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
