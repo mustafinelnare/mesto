@@ -9,41 +9,26 @@ let profileSubtitle = document.querySelector('.profile__subtitle');
 
 /* Открытие и закрытие */
 
-popupOpenBtn.addEventListener('click', openPopup);
 popupCloseBtn.addEventListener('click', closePopup);
 
 function openPopup() {
-  popupContainer.classList.add('popup__opened');
+  popupContainer.classList.add('popup_opened');
 }
 
 function closePopup() {
-  popupContainer.classList.remove('popup__opened');
+  popupContainer.classList.remove('popup_opened');
 }
-
-/* Выход из попапа ткнув в пустое место */
-
-popupContainer.addEventListener('click', function(event) {
-  if (event.target === event.currentTarget) {
-    closePopup();
-  }
-});
 
 /* Редактирование имени и информации о себе */
 
 popupOpenBtn.addEventListener('click', function() {
-  openPopup(popupContainer);
+  openPopup();
   nameInput.value = profileTitle.textContent;
   jobInput.value = profileSubtitle.textContent;
 });
 
 popupCloseBtn.addEventListener('click', function() {
-  closePopup(popupContainer);
-});
-
-popupContainer.addEventListener("click", function (evt) {
-  if (evt.target === evt.currentTarget) {
-    closePopup(popupContainer);
-  }
+  closePopup();
 });
 
 function handleFormSubmit (evt) {

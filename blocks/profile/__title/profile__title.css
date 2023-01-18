@@ -1,14 +1,17 @@
 .profile__title {
   font-size: 42px;
-  font-family: 'Inter';
   font-weight: 500;
   line-height: 48px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 294px;
   margin: 0 auto;
-  color: #FFFFFF;
 }
 
 @media screen and (max-width: 768px) {
   .profile__title {
+    max-width: 189px;
     margin: 26px auto 0;
   }
 }
@@ -16,6 +19,5 @@
 @media screen and (max-width: 425px) {
   .profile__title {
     font-size: 27px;
-    margin: 26px auto 0;
   }
 }

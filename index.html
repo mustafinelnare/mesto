@@ -1,100 +1,104 @@
 <!DOCTYPE html>
 <html lang="ru">
-    <head>
-        <meta charset="UTF-8" >
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Mesto</title>
-        <link rel="stylesheet" href="./pages/index.css">
-        <link type="image/x-icon" href="./images/favicon.ico" rel="shortcut icon">
-    </head>
-    <body>
-      <div class="page">
-        <header class="header">
-          <img class="header__logo" src="./images/logo.svg" alt="Логотип">
-          <hr class="header__line">
-        </header>
 
-        <main class="content">
-        <section class="profile">
-          <img class="profile__avatar" src="./images/avatar.svg" alt="Аватар">
-          <div class="profile__info">
-            <div class="profile__place">
-            <h2 class="profile__title">Жак-Ив Кусто</h2>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mesto</title>
+  <link rel="stylesheet" href="./pages/index.css">
+  <link type="image/x-icon" href="./images/favicon.ico" rel="shortcut icon">
+</head>
+
+<body>
+  <div class="page">
+    <header class="header">
+      <img class="header__logo" src="./images/logo.svg" alt="Логотип">
+    </header>
+
+    <main class="content">
+      <section class="profile">
+        <img class="profile__avatar" src="./images/avatar.svg" alt="Аватар">
+        <div class="profile__info">
+          <div class="profile__place">
+            <h1 class="profile__title">Жак-Ив Кусто</h1>
             <button class="profile__edit-button" type="button"></button>
-            </div>
-            <p class="profile__subtitle">Исследователь океана</p>
           </div>
-          <button class="profile__add-button" type="button"></button>
-        </section>
+          <p class="profile__subtitle">Исследователь океана</p>
+        </div>
+        <button class="profile__add-button" type="button"></button>
+      </section>
 
-        <section class="element">
-          <div class="element__item">
-            <img class="element__image" src="./images/altay.jpg" alt="Алтай">
-            <div class="element__description">
-              <h2 class="element__title">Алтай</h2>
-              <button class="element__button element__button_active" type="button"></button>
-            </div>
+      <section class="element">
+        <article class="element__item">
+          <img class="element__image" src="./images/altay.jpg" alt="Алтай">
+          <div class="element__description">
+            <h2 class="element__title">Алтай</h2>
+            <button class="element__button" type="button"></button>
           </div>
+        </article>
 
-          <div class="element__item">
-            <img class="element__image" src="./images/kamchatka.jpg" alt="Камчатка">
-            <div class="element__description">
-              <h2 class="element__title">Камчатка</h2>
-              <button class="element__button element__button_active" type="button"></button>
-            </div>
+        <article class="element__item">
+          <img class="element__image" src="./images/kamchatka.jpg" alt="Камчатка">
+          <div class="element__description">
+            <h2 class="element__title">Камчатка</h2>
+            <button class="element__button" type="button"></button>
           </div>
+        </article>
 
-          <div class="element__item">
-            <img class="element__image" src="./images/kosa.jpg" alt="Куршская коса">
-            <div class="element__description">
-              <h2 class="element__title">Куршская коса</h2>
-              <button class="element__button element__button_active" type="button"></button>
-            </div>
+        <article class="element__item">
+          <img class="element__image" src="./images/kosa.jpg" alt="Куршская коса">
+          <div class="element__description">
+            <h2 class="element__title">Куршская коса</h2>
+            <button class="element__button" type="button"></button>
           </div>
+        </article>
 
-          <div class="element__item">
-            <img class="element__image" src="./images/man-pupu-ner.jpg" alt="Маньпупунёр">
-            <div class="element__description">
-              <h2 class="element__title">Маньпупунёр</h2>
-              <button class="element__button element__button_active" type="button"></button>
-            </div>
+        <article class="element__item">
+          <img class="element__image" src="./images/man-pupu-ner.jpg" alt="Маньпупунёр">
+          <div class="element__description">
+            <h2 class="element__title">Маньпупунёр</h2>
+            <button class="element__button" type="button"></button>
           </div>
+        </article>
 
-          <div class="element__item">
-            <img class="element__image" src="./images/sakhalin.jpg" alt="Сахалин">
-            <div class="element__description">
-              <h2 class="element__title">Сахалин</h2>
-              <button class="element__button element__button_active" type="button"></button>
-            </div>
+        <article class="element__item">
+          <img class="element__image" src="./images/sakhalin.jpg" alt="Сахалин">
+          <div class="element__description">
+            <h2 class="element__title">Сахалин</h2>
+            <button class="element__button" type="button"></button>
           </div>
+        </article>
 
-          <div class="element__item">
-            <img class="element__image" src="./images/teriberka.jpg" alt="Териберка">
-            <div class="element__description">
-              <h2 class="element__title">Териберка</h2>
-              <button class="element__button element__button_active" type="button"></button>
-            </div>
+        <article class="element__item">
+          <img class="element__image" src="./images/teriberka.jpg" alt="Териберка">
+          <div class="element__description">
+            <h2 class="element__title">Териберка</h2>
+            <button class="element__button" type="button"></button>
           </div>
-        </section>
-        </main>
+        </article>
+      </section>
+    </main>
 
-        <footer class="footer">
-          <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
-        </footer>
+    <footer class="footer">
+      <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
+    </footer>
 
-        <section class="popup">
-          <div class="popup__container">
-            <button class="popup__close-button"></button>
-            <h2 class="popup__title">Редактировать профиль</h2>
-            <form class="popup__form" name="formElement">
-            <input class="popup__input popup__input_type_name" value="" type="text" id="nameInput" name="name" placeholder="Имя пользователя" required>
-            <input class="popup__input popup__input_type_job" value="" type="text" id="jobInput" name="profession" placeholder="Название профессии" required>
-            <button class="popup__submit" type="submit">Сохранить</button>
-            </form>
-          </div>
-        </section>
-
+    <div class="popup">
+      <div class="popup__container">
+        <button class="popup__close-button" type="button"></button>
+        <h2 class="popup__title">Редактировать профиль</h2>
+        <form class="popup__form" name="formElement">
+          <input class="popup__input popup__input_type_name" value="" type="text" id="nameInput" name="name"
+            placeholder="Имя пользователя" required>
+          <input class="popup__input popup__input_type_job" value="" type="text" id="jobInput" name="profession"
+            placeholder="Название профессии" required>
+          <button class="popup__submit" type="submit">Сохранить</button>
+        </form>
       </div>
-      <script src="./vendor/script.js"></script>
-    </body>
+    </div>
+
+  </div>
+  <script src="./scripts/index.js"></script>
+</body>
+
 </html>
