@@ -6,7 +6,7 @@
   width: 100%;
   border: none;
   border-radius: 2px;
-  margin: 18px auto 37px 36px;
+  margin: 18px 36px 37px;
   background: #000000;
   background-position: center;
   color: #ffffff;
@@ -19,10 +19,10 @@
 
 @media screen and (max-width: 768px) {
   .popup__submit {
+    font-size: 14px;
     max-width: 238px;
     width: 100%;
     height: 46px;
-    margin: 15px auto 25px 22px;
-    font-size: 14px;
+    margin: 15px 22px 25px;
   }
 }

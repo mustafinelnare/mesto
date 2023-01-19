@@ -9,8 +9,6 @@ let profileSubtitle = document.querySelector('.profile__subtitle');
 
 /* Открытие и закрытие */
 
-popupCloseBtn.addEventListener('click', closePopup);
-
 function openPopup() {
   popupContainer.classList.add('popup_opened');
 }
@@ -35,7 +33,7 @@ function handleFormSubmit (evt) {
   evt.preventDefault();
   profileTitle.textContent = nameInput.value;
   profileSubtitle.textContent = jobInput.value;
-  closePopup(popupContainer);
+  closePopup();
 }
 
 formElement.addEventListener('submit', handleFormSubmit);

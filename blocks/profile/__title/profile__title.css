@@ -6,18 +6,15 @@
   white-space: nowrap;
   overflow: hidden;
   max-width: 294px;
+  min-height: 39px;
   margin: 0 auto;
 }
 
 @media screen and (max-width: 768px) {
   .profile__title {
-    max-width: 189px;
-    margin: 26px auto 0;
-  }
-}
-
-@media screen and (max-width: 425px) {
-  .profile__title {
     font-size: 27px;
+    max-width: 189px;
+    min-height: 26px;
+    margin: 20px auto 0 26px;
   }
 }
