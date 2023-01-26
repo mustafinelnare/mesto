@@ -29,58 +29,22 @@
       </section>
 
       <section class="element">
-        <article class="element__item">
-          <img class="element__image" src="./images/altay.jpg" alt="Алтай">
-          <div class="element__description">
-            <h2 class="element__title">Алтай</h2>
-            <button class="element__button" type="button"></button>
-          </div>
-        </article>
-
-        <article class="element__item">
-          <img class="element__image" src="./images/kamchatka.jpg" alt="Камчатка">
-          <div class="element__description">
-            <h2 class="element__title">Камчатка</h2>
-            <button class="element__button" type="button"></button>
-          </div>
-        </article>
-
-        <article class="element__item">
-          <img class="element__image" src="./images/kosa.jpg" alt="Куршская коса">
-          <div class="element__description">
-            <h2 class="element__title">Куршская коса</h2>
-            <button class="element__button" type="button"></button>
-          </div>
-        </article>
-
-        <article class="element__item">
-          <img class="element__image" src="./images/man-pupu-ner.jpg" alt="Маньпупунёр">
-          <div class="element__description">
-            <h2 class="element__title">Маньпупунёр</h2>
-            <button class="element__button" type="button"></button>
-          </div>
-        </article>
-
-        <article class="element__item">
-          <img class="element__image" src="./images/sakhalin.jpg" alt="Сахалин">
-          <div class="element__description">
-            <h2 class="element__title">Сахалин</h2>
-            <button class="element__button" type="button"></button>
-          </div>
-        </article>
-
-        <article class="element__item">
-          <img class="element__image" src="./images/teriberka.jpg" alt="Териберка">
-          <div class="element__description">
-            <h2 class="element__title">Териберка</h2>
-            <button class="element__button" type="button"></button>
-          </div>
-        </article>
       </section>
     </main>
 
+    <template id="element">
+      <article class="element__item">
+        <img class="element__image">
+        <button class="element__trash" type="button"></button>
+        <div class="element__description">
+          <h2 class="element__title"></h2>
+          <button class="element__button" type="button"></button>
+        </div>
+      </article>
+    </template>
+
     <footer class="footer">
-      <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
+      <p class="footer__copyright">&copy; 2023 Mesto Russia</p>
     </footer>
 
     <div class="popup">
@@ -93,6 +57,20 @@
           <input class="popup__input popup__input_type_job" value="" type="text" id="jobInput" name="profession"
             placeholder="Название профессии" required>
           <button class="popup__submit" type="submit">Сохранить</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="popup popup_add">
+      <div class="popup__container">
+        <button class="popup__close-button popup__close-button_add" type="button"></button>
+        <h2 class="popup__title">Новое место</h2>
+        <form class="popup__form popup__form_add" name="formAddElement">
+          <input class="popup__input popup__input_type_title" value="" type="text" id="titleInput" name="title"
+            placeholder="Название" required>
+          <input class="popup__input popup__input_type_link" value="" type="text" id="linkInput" name="link"
+            placeholder="Ссылка на картинку" required>
+          <button class="popup__submit popup__submit_add" type="submit">Создать</button>
         </form>
       </div>
     </div>
