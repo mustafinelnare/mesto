@@ -1,7 +1,9 @@
 const popupContainer = document.querySelector('.popup');
 const popupContainerAdd = document.querySelector('.popup_add');
+const popupContainerOpenImage = document.querySelector('.popup_open-image');
 const popupCloseBtn = document.querySelector('.popup__close-button');
 const popupCloseBtnAdd = document.querySelector('.popup__close-button_add');
+const popupCloseBtnImage = document.querySelector('.popup__close-button_image');
 const popupOpenBtnEdit = document.querySelector('.profile__edit-button');
 const popupOpenBtnAdd = document.querySelector('.profile__add-button');
 const popupForm = document.querySelector('.popup__form');
@@ -19,6 +21,8 @@ const cards = document.querySelector('.element');
 const createBtn = document.querySelector('.popup__submit_add');
 const titleInput = document.querySelector('.popup__input_type_title');
 const linkInput = document.querySelector('.popup__input_type_link');
+const popupImage = document.querySelector('.popup__image');
+const popupSubtitle = document.querySelector('.popup__subtitle');
 
 /* Массив карточек */
 
@@ -77,17 +81,31 @@ function createCard(item) {
   const card = template.cloneNode(true);
   card.querySelector('.element__image').src = item.link;
   card.querySelector('.element__title').textContent = item.name;
+  popupFormAdd.reset();
 
+  // Удаление карточки
   card.querySelector('.element__trash').addEventListener('click', () => {
     card.remove();
   });
 
+  // Лайк
   card.querySelector('.element__button').addEventListener('click', () => {
     card.querySelector('.element__button').classList.toggle('element__button_active');
   });
 
+  // Открытие карточек
+  card.querySelector('.element__image').addEventListener('click', () => {
+    openPopup(popupContainerOpenImage);
+    popupImage.src = item.link;
+    popupSubtitle.textContent = item.name;
+  });
+
   return card;
-}
+};
+
+popupCloseBtnImage.addEventListener('click', function() {
+  closePopup(popupContainerOpenImage);
+});
 
 // Открытие и закрытие модальных окон
 
@@ -129,16 +147,3 @@ function handleFormSubmit (evt) {
 };
 
 popupForm.addEventListener('submit', handleFormSubmit);
-
-
-
-
-
-/* Нажатие на кнопку Like
-
-likeBtn.forEach(function(likeBtn){
-  likeBtn.addEventListener('click', function (evt) {
-  evt.target.classList.toggle('element__button_active');
-});
-});
-*/
