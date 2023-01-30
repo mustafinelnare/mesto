@@ -7,6 +7,8 @@
   <title>Mesto</title>
   <link rel="stylesheet" href="./pages/index.css">
   <link type="image/x-icon" href="./images/favicon.ico" rel="shortcut icon">
+  <script src="./scripts/constants.js" defer></script>
+  <script src="./scripts/index.js" defer></script>
 </head>
 
 <body>
@@ -47,14 +49,14 @@
       <p class="footer__copyright">&copy; 2023 Mesto Russia</p>
     </footer>
 
-    <div class="popup">
+    <div class="popup popup_edit">
       <div class="popup__container">
         <button class="popup__close-button" type="button"></button>
         <h2 class="popup__title">Редактировать профиль</h2>
         <form class="popup__form" name="formElement">
-          <input class="popup__input popup__input_type_name" value="" type="text" id="nameInput" name="name"
+          <input class="popup__input popup__input_type_name" type="text" id="nameInput" name="name"
             placeholder="Имя пользователя" required>
-          <input class="popup__input popup__input_type_job" value="" type="text" id="jobInput" name="profession"
+          <input class="popup__input popup__input_type_job" type="text" id="jobInput" name="profession"
             placeholder="Название профессии" required>
           <button class="popup__submit" type="submit">Сохранить</button>
         </form>
@@ -66,9 +68,9 @@
         <button class="popup__close-button popup__close-button_add" type="button"></button>
         <h2 class="popup__title">Новое место</h2>
         <form class="popup__form popup__form_add" name="formAddElement">
-          <input class="popup__input popup__input_type_title" value="" type="text" id="titleInput" name="title"
+          <input class="popup__input popup__input_type_title" type="text" id="titleInput" name="title"
             placeholder="Название" required>
-          <input class="popup__input popup__input_type_link" value="" type="text" id="linkInput" name="link"
+          <input class="popup__input popup__input_type_link" type="url" id="linkInput" name="link"
             placeholder="Ссылка на картинку" required>
           <button class="popup__submit popup__submit_add" type="submit">Создать</button>
         </form>
@@ -86,7 +88,6 @@
     </div>
 
   </div>
-  <script src="./scripts/index.js"></script>
 </body>
 
 </html>

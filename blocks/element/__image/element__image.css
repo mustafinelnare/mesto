@@ -10,3 +10,7 @@
 		margin: 0 auto;
 	}
 }
+
+.element__image:hover {
+  cursor: pointer;
+}
