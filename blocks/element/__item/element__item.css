@@ -4,9 +4,8 @@
 	flex-direction: column;
   width: 282px;
   height: 361px;
-	margin: 0;
+	margin: auto;
 	text-overflow: ellipsis;
 	white-space: nowrap;
-	overflow: hidden;
-  margin: auto;
+  overflow: hidden;
 }
