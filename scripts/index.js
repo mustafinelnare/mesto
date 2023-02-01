@@ -1,4 +1,3 @@
-const popupEdit = document.querySelector('.popup');
 const popupOpenEdit = document.querySelector('.popup_edit');
 const popupOpenAdd = document.querySelector('.popup_add');
 const popupOpenImage = document.querySelector('.popup_open-image');
@@ -45,7 +44,7 @@ function createCard(item) {
   });
 
   card.querySelector('.element__image').addEventListener('click', () => {
-    popupOpenImage.classList.add('popup_opened');
+    openPopup(popupOpenImage);
     popupImage.src = item.link;
     popupImage.alt = item.name;
     popupSubtitle.textContent = item.name;
@@ -69,7 +68,7 @@ popupOpenBtnEdit.addEventListener('click', function() {
 });
 
 popupOpenBtnAdd.addEventListener('click', function() {
-  popupOpenAdd.classList.add('popup_opened');
+  openPopup(popupOpenAdd);
 });
 
 popupCloseBtn.addEventListener('click', function() {
@@ -77,11 +76,11 @@ popupCloseBtn.addEventListener('click', function() {
 });
 
 popupCloseBtnAdd.addEventListener('click', function() {
-  popupOpenAdd.classList.remove('popup_opened');
+  closePopup(popupOpenAdd);
 });
 
 popupCloseBtnImage.addEventListener('click', function() {
-  popupOpenImage.classList.remove('popup_opened');
+  closePopup(popupOpenImage);
 });
 
 function formEditSubmit (evt) {
