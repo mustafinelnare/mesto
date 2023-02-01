@@ -1,4 +1,4 @@
-const popup = document.querySelector('.popup');
+const popupEdit = document.querySelector('.popup');
 const popupOpenEdit = document.querySelector('.popup_edit');
 const popupOpenAdd = document.querySelector('.popup_add');
 const popupOpenImage = document.querySelector('.popup_open-image');
@@ -7,8 +7,8 @@ const popupCloseBtnAdd = document.querySelector('.popup__close-button_add');
 const popupCloseBtnImage = document.querySelector('.popup__close-button_image');
 const popupOpenBtnEdit = document.querySelector('.profile__edit-button');
 const popupOpenBtnAdd = document.querySelector('.profile__add-button');
-const popupForm = document.querySelector('.popup__form');
-const popupFormAdd = document.querySelector('.popup__form_add');
+const popupEditForm = document.querySelector('.popup__form_edit');
+const popupAddForm = document.querySelector('.popup__form_add');
 const nameInput = document.querySelector('.popup__input_type_name');
 const jobInput = document.querySelector('.popup__input_type_job');
 const profileTitle = document.querySelector('.profile__title');
@@ -25,7 +25,7 @@ function showInitialCards() {
     return createCard(item);
   });
 
-  cards.prepend(...elements);
+  cards.append(...elements);
 };
 
 showInitialCards();
@@ -54,13 +54,13 @@ function createCard(item) {
   return card;
 };
 
-function openPopup() {
+function openPopup(popup) {
   popup.classList.add('popup_opened');
-}
+};
 
-function closePopup() {
+function closePopup(popup) {
   popup.classList.remove('popup_opened');
-}
+};
 
 popupOpenBtnEdit.addEventListener('click', function() {
   openPopup(popupOpenEdit);
@@ -88,10 +88,10 @@ function formEditSubmit (evt) {
   evt.preventDefault();
   profileTitle.textContent = nameInput.value;
   profileSubtitle.textContent = jobInput.value;
-  closePopup(popup);
+  closePopup(popupOpenEdit);
 };
 
-popupForm.addEventListener('submit', formEditSubmit);
+popupEditForm.addEventListener('submit', formEditSubmit);
 
 function formAddSubmit (evt) {
   evt.preventDefault();
@@ -101,8 +101,8 @@ function formAddSubmit (evt) {
   const card = createCard({ name: title, link: link });
 
   cards.prepend(card);
-  popupFormAdd.reset();
-  popupOpenAdd.classList.remove('popup_opened');
+  popupAddForm.reset();
+  closePopup(popupOpenAdd);
 };
 
-popupFormAdd.addEventListener('submit', formAddSubmit);
+popupAddForm.addEventListener('submit', formAddSubmit);
