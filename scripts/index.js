@@ -18,6 +18,7 @@ const titleInput = document.querySelector('.popup__input_type_title');
 const linkInput = document.querySelector('.popup__input_type_link');
 const popupImage = document.querySelector('.popup__image');
 const popupSubtitle = document.querySelector('.popup__subtitle');
+const popupSubmitAdd = document.querySelector('.popup__submit_add');
 
 function showInitialCards() {
   const elements = initialCards.map((item) => {
@@ -59,6 +60,7 @@ function openPopup(popup) {
 
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
+  popupAddForm.reset();
 };
 
 popupOpenBtnEdit.addEventListener('click', function() {
@@ -72,6 +74,7 @@ popupOpenBtnAdd.addEventListener('click', function() {
 });
 
 popupCloseBtn.addEventListener('click', function() {
+  popupEditForm.reset();
   closePopup(popupOpenEdit);
 });
 
@@ -105,3 +108,19 @@ function formAddSubmit (evt) {
 };
 
 popupAddForm.addEventListener('submit', formAddSubmit);
+
+document.addEventListener('keydown', keyHandlerEscape);
+
+function keyHandlerEscape(evt) {
+  if (evt.key === 'Escape') {
+    const popupOpened = document.querySelector('.popup_opened');
+    closePopup(popupOpened);
+  }
+};
+
+const popupOverlay = document.querySelectorAll('.popup');
+popupOverlay.forEach((item) => {
+  item.addEventListener('click', (evt) => {
+    closePopup(evt.target);
+  });
+});
