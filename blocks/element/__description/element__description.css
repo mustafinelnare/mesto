@@ -1,15 +1,15 @@
 .element__description {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	width: 246px;
-	border-radius: 0 0 10px 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 246px;
+  border-radius: 0 0 10px 10px;
   padding: 25px 15px 26px 21px;
-	background: #ffffff;
+  background: #ffffff;
 }
 
 @media screen and (max-width: 768px) {
-	.element__description {
-		margin: 0 auto;
-	}
+  .element__description {
+    margin: 0 auto;
+  }
 }
