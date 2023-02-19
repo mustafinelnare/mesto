@@ -70,6 +70,7 @@ popupOpenBtnEdit.addEventListener("click", function () {
 
 popupOpenBtnAdd.addEventListener("click", function () {
     openPopup(popupOpenAdd);
+    disableButton(popupSubmitAdd);
 });
 
 popupCloseBtn.addEventListener("click", function () {
