@@ -1,13 +1,44 @@
+import Card from "./Card.js";
+import FormValidator from "./FormValidator.js";
+
+const initialCards = [
+    {
+        name: "Алтай",
+        link: "https://i.postimg.cc/Yq86FXRP/altay.jpg",
+    },
+    {
+        name: "Камчатка",
+        link: "https://i.postimg.cc/BvPHdJ3W/kamchatka.jpg",
+    },
+    {
+        name: "Куршская коса",
+        link: "https://i.postimg.cc/g2T3Snfq/kosa.jpg",
+    },
+    {
+        name: "Маньпупунёр",
+        link: "https://i.postimg.cc/pXPQpNf8/man-pupu-ner.jpg",
+    },
+    {
+        name: "Сахалин",
+        link: "https://i.postimg.cc/MTkVwgZn/sakhalin.jpg",
+    },
+    {
+        name: "Териберка",
+        link: "https://i.postimg.cc/jS5z4zkS/teriberka.jpg",
+    },
+];
+
 const popupOpenEdit = document.querySelector(".popup_edit");
 const popupOpenAdd = document.querySelector(".popup_add");
 const popupOpenImage = document.querySelector(".popup_open-image");
+const popupEditForm = document.querySelector(".popup__form_edit");
+const popupAddForm = document.querySelector(".popup__form_add");
+const popupOpenBtnEdit = document.querySelector(".profile__edit-button");
 const popupCloseBtn = document.querySelector(".popup__close-button");
 const popupCloseBtnAdd = document.querySelector(".popup__close-button_add");
 const popupCloseBtnImage = document.querySelector(".popup__close-button_image");
-const popupOpenBtnEdit = document.querySelector(".profile__edit-button");
 const popupOpenBtnAdd = document.querySelector(".profile__add-button");
-const popupEditForm = document.querySelector(".popup__form_edit");
-const popupAddForm = document.querySelector(".popup__form_add");
+const popupSubmitAdd = document.querySelector(".popup__submit_add");
 const nameInput = document.querySelector(".popup__input_type_name");
 const jobInput = document.querySelector(".popup__input_type_job");
 const profileTitle = document.querySelector(".profile__title");
@@ -18,10 +49,25 @@ const titleInput = document.querySelector(".popup__input_type_title");
 const linkInput = document.querySelector(".popup__input_type_link");
 const popupImage = document.querySelector(".popup__image");
 const popupSubtitle = document.querySelector(".popup__subtitle");
-const popupSubmitAdd = document.querySelector(".popup__submit_add");
+
+const config = {
+    formSelector: ".popup__form",
+    inputSelector: ".popup__input",
+    submitButtonSelector: ".popup__submit",
+    inactiveButtonClass: "popup__submit_disabled",
+    inputErrorClass: "popup__input_type_error",
+    errorClass: "popup__error_active",
+};
+
+const ValidPopupEditForm = new FormValidator(config, popupEditForm);
+ValidPopupEditForm.enableValidation();
+
+const ValidPopupAddForm = new FormValidator(config, popupAddForm);
+ValidPopupAddForm.enableValidation();
 
 function showInitialCards() {
     const elements = initialCards.map((item) => {
+        const card = new Card(item);
         return createCard(item);
     });
 
@@ -62,27 +108,31 @@ function closePopup(popup) {
     popup.classList.remove("popup_opened");
 }
 
-popupOpenBtnEdit.addEventListener("click", function () {
+function disableButton(button) {
+    button.classList.add(config.inactiveButtonClass);
+    button.disabled = true;
+}
+
+popupOpenBtnEdit.addEventListener("click", () => {
     openPopup(popupOpenEdit);
     nameInput.value = profileTitle.textContent;
     jobInput.value = profileSubtitle.textContent;
 });
-
-popupOpenBtnAdd.addEventListener("click", function () {
+popupOpenBtnAdd.addEventListener("click", () => {
     openPopup(popupOpenAdd);
     disableButton(popupSubmitAdd);
 });
 
-popupCloseBtn.addEventListener("click", function () {
+popupCloseBtn.addEventListener("click", () => {
     popupEditForm.reset();
     closePopup(popupOpenEdit);
 });
 
-popupCloseBtnAdd.addEventListener("click", function () {
+popupCloseBtnAdd.addEventListener("click", () => {
     closePopup(popupOpenAdd);
 });
 
-popupCloseBtnImage.addEventListener("click", function () {
+popupCloseBtnImage.addEventListener("click", () => {
     closePopup(popupOpenImage);
 });
 
