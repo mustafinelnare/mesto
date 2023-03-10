@@ -12,7 +12,7 @@
   <script type="module" src="./scripts/FormValidator.js" defer></script>
 </head>
 
-<body>
+<body class="root">
   <div class="page">
     <header class="header">
       <img class="header__logo" src="./images/logo.svg" alt="Логотип">
@@ -54,7 +54,7 @@
       <div class="popup__container">
         <button class="popup__close-button" type="button"></button>
         <h2 class="popup__title">Редактировать профиль</h2>
-        <form class="popup__form popup__form_edit" name="formElement" novalidate>
+        <form class="popup__form popup__form_edit" name="formEdit" novalidate>
           <input class="popup__input popup__input_type_name" type="text" id="nameInput" name="name" minlength="2"
             maxlength="40" placeholder="Имя пользователя" required>
           <span class="popup__error_type_name popup__error"></span>
@@ -70,7 +70,7 @@
       <div class="popup__container">
         <button class="popup__close-button popup__close-button_add" type="button"></button>
         <h2 class="popup__title">Новое место</h2>
-        <form class="popup__form popup__form_add" name="formElement" novalidate>
+        <form class="popup__form popup__form_add" name="formAdd" novalidate>
           <input class="popup__input popup__input_type_title" type="text" id="titleInput" name="title" minlength="2"
             maxlength="30" placeholder="Название" required>
           <span class="popup__error_type_title popup__error"></span>
