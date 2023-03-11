@@ -56,11 +56,11 @@ const config = {
     errorClass: "popup__error_active",
 };
 
-const ValidPopupEditForm = new FormValidator(config, popupEditForm);
-ValidPopupEditForm.enableValidation();
+const validPopupEditForm = new FormValidator(config, popupEditForm);
+validPopupEditForm.enableValidation();
 
-const ValidPopupAddForm = new FormValidator(config, popupAddForm);
-ValidPopupAddForm.enableValidation();
+const validPopupAddForm = new FormValidator(config, popupAddForm);
+validPopupAddForm.enableValidation();
 
 function showInitialCards() {
     initialCards.map((item) => {
@@ -141,5 +141,6 @@ function handleAddSubmit(evt) {
 
     cards.prepend(card);
     popupAddForm.reset();
+    validPopupAddForm.resetValidation();
     closePopup(popupOpenAdd);
 }

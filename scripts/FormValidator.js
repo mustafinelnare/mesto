@@ -8,7 +8,6 @@ export default class FormValidator {
       this._errorClass = config.errorClass;
       this._inputList = Array.from(this._formElement.querySelectorAll(this._inputSelector));
       this._buttonElement = this._formElement.querySelector(this._submitButtonSelector);
-      this._disableButton(this._buttonElement);
   }
 
   _showInputError(inputElement, errorMessage) {
@@ -49,11 +48,6 @@ export default class FormValidator {
       });
   }
 
-  _disableButton(button) {
-      button.classList.add(this._inactiveButtonClass);
-      button.disabled = true;
-  }
-
   _setEventListener() {
       this._inputList.forEach((inputElement) => {
           inputElement.addEventListener("input", () => {
@@ -64,6 +58,7 @@ export default class FormValidator {
   }
 
   enableValidation = () => {
+      this._toggleButtonState();
       this._setEventListener();
   };
 
