@@ -5,22 +5,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mesto</title>
-  <link rel="stylesheet" href="./pages/index.css">
+  <!-- <link rel="stylesheet" href="./pages/index.css"> -->
   <link type="image/x-icon" href="./images/favicon.ico" rel="shortcut icon">
-  <script type="module" src="./scripts/index.js" defer></script>
-  <script type="module" src="./scripts/Card.js" defer></script>
-  <script type="module" src="./scripts/FormValidator.js" defer></script>
+  <!-- <script type="module" src="./scripts/pages/index.js" defer></script> -->
+
 </head>
 
 <body class="root">
   <div class="page">
     <header class="header">
-      <img class="header__logo" src="./images/logo.svg" alt="Логотип">
+      <img class="header__logo" src="<%=require('./images/logo.svg')%>" alt="Логотип">
     </header>
 
     <main class="content">
       <section class="profile">
-        <img class="profile__avatar" src="./images/avatar.svg" alt="Аватар">
+        <img class="profile__avatar" src="<%=require('./images/avatar.svg')%>" alt="Аватар">
         <div class="profile__info">
           <div class="profile__place">
             <h1 class="profile__title">Жак-Ив Кусто</h1>
