@@ -25,34 +25,35 @@ function createCard(data) {
   return card.generateCard();
 }
 
-const sectionCard = new Section({
-  data: initialCards,
-  renderer: createCard,
-}, "#element");
-
-sectionCard.renderItems();
-
 const validPopupEditForm = new FormValidator(config, popupEditForm);
 validPopupEditForm.enableValidation();
 
 const validPopupAddForm = new FormValidator(config, popupAddForm);
 validPopupAddForm.enableValidation();
 
-const popup = new Popup(".popup");
-popup.open();
-popup.close();
+const userInfo = new UserInfo({
+  nameSelector: '.profile__title',
+  jobSelector: '.profile__subtitle'
+});
 
 const popupOpenEdit = new PopupWithForm(".popup_edit", (data) => {
-  profileTitle.textContent = data.name;
-  profileSubtitle.textContent = data.job;
-});
+  userInfo.setUserInfo({ name: data.name, job: data.job });
+  profileTitle.textContent = nameInput.value;
+  profileSubtitle.textContent = jobInput.value;
+  popupOpenEdit.close();
+}, popupEditForm);
 
 popupOpenEdit.setEventListeners();
 
 const popupOpenAdd = new PopupWithForm(".popup_add", (data) => {
-  const card = createCard(data);
-  cards.append(card);
-});
+  const title = data.title;
+  const link = data.link;
+  const card = createCard({ name: title, link: link });
+  cards.prepend(card);
+  popupOpenAdd.close();
+  popupAddForm.reset();
+  validPopupAddForm.resetValidation();
+}, popupAddForm, titleInput, linkInput);
 
 popupOpenAdd.setEventListeners();
 
@@ -60,49 +61,24 @@ const popupOpenImage = new PopupWithImage(".popup_open-image");
 
 popupOpenImage.setEventListeners();
 
-const userInfo = new UserInfo({
-  nameSelector: '.profile__title',
-  jobSelector: '.profile__subtitle'
-});
+const sectionCard = new Section({
+  renderer: (item) => {
+    const card = createCard(item);
+    sectionCard.setItem(card);
+  }
+}, ".element");
 
-function showInitialCards() {
-    initialCards.map((item) => {
-        const card = createCard(item);
-        cards.append(card);
-    });
-}
-
-showInitialCards();
+sectionCard.renderItems(initialCards);
 
 function handleCardClick(name, link) {
   popupOpenImage.open(name, link);
 }
 
-popupEditForm.addEventListener("submit", function(evt) {
-  evt.preventDefault();
-  profileTitle.textContent = nameInput.value;
-  profileSubtitle.textContent = jobInput.value;
-  popupOpenEdit.close();
-});
-
-popupAddForm.addEventListener("submit", function(evt) {
-  evt.preventDefault();
-  const title = titleInput.value;
-  const link = linkInput.value;
-
-  const card = createCard({ name: title, link: link });
-
-  cards.prepend(card);
-  validPopupAddForm.resetValidation();
-  popupOpenAdd.close();
-  popupAddForm.reset();
-});
-
-
 popupOpenBtnEdit.addEventListener("click", () => {
   popupOpenEdit.open();
-  nameInput.value = profileTitle.textContent;
-  jobInput.value = profileSubtitle.textContent;
+  const userInfoGet = userInfo.getUserInfo();
+  nameInput.value = userInfoGet.name;
+  jobInput.value = userInfoGet.job;
 });
 
 popupOpenBtnAdd.addEventListener("click", () => {
