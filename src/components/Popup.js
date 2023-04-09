@@ -30,4 +30,8 @@ export default class Popup {
           }
       });
   }
+
+  submitProcess(process) {
+      this._submitButton.textContent = process;
+  }
 }

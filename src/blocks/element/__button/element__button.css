@@ -1,6 +1,8 @@
 .element__button {
   max-width: 22px;
+  height: 19px;
   width: 100%;
+  outline: none;
   border: none;
   background: inherit;
   background-size: contain;
