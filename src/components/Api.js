@@ -4,22 +4,19 @@
     this._headers = headers;
   }
 
+  _getResponseData(res) {
+    if (!res.ok) {
+        return Promise.reject(`Ошибка: ${res.status}`);
+    }
+    return res.json();
+  }
+
   getInitialCards() {
-    return fetch(`${this._baseUrl}/cards`, { headers: this._headers }).then(res => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`Ошибка: ${res.status}`);
-    });
+    return fetch(`${this._baseUrl}/cards`, { headers: this._headers }).then(this._getResponseData);
   }
 
   getDataUser() {
-    return fetch(`${this._baseUrl}/users/me`, { headers: this._headers }).then(res => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`Ошибка: ${res.status}`);
-    });
+    return fetch(`${this._baseUrl}/users/me`, { headers: this._headers }).then(this._getResponseData);
   }
 
   saveDataInfo(profileInfo) {
@@ -28,12 +25,7 @@
       method: 'PATCH',
       body: JSON.stringify({ name: profileInfo.name, about: profileInfo.job })
     })
-    .then(res => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`Ошибка: ${res.status}`);
-    });
+    .then(this._getResponseData);
   }
 
   saveDataProfile(profileAvatar) {
@@ -42,12 +34,7 @@
       method: 'PATCH',
       body: JSON.stringify({ avatar: profileAvatar.linkAvatar })
     })
-    .then(res => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`Ошибка: ${res.status}`);
-    });
+    .then(this._getResponseData);
   }
 
   addCard({ name, link }) {
@@ -56,12 +43,7 @@
       method: 'POST',
       body: JSON.stringify({ name, link })
     })
-    .then(res => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`Ошибка: ${res.status}`);
-    });
+    .then(this._getResponseData);
   }
 
   deleteCard(cardId) {
@@ -69,12 +51,7 @@
       headers: this._headers,
       method: 'DELETE',
     })
-    .then(res => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`Ошибка: ${res.status}`);
-    });
+    .then(this._getResponseData);
   }
 
   addLike(cardId) {
@@ -82,12 +59,7 @@
       headers: this._headers,
       method: 'PUT',
     })
-    .then(res => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`Ошибка: ${res.status}`);
-    });
+    .then(this._getResponseData);
   }
 
   deleteLike(cardId) {
@@ -95,11 +67,6 @@
       headers: this._headers,
       method: 'DELETE',
     })
-    .then(res => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`Ошибка: ${res.status}`);
-    });
+    .then(this._getResponseData);
   }
  }

@@ -29,4 +29,8 @@ export class PopupWithForm extends Popup {
     super.close();
     this._form.reset();
   }
+
+  submitProcess(process) {
+    this._submitButton.textContent = process;
+}
 }
