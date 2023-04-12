@@ -35,8 +35,9 @@ const popupConfirm = new PopupWithConfirmation(".popup_delete");
 popupConfirm.setEventListeners();
 
 function createCard(data) {
-    const userId = userInfo.getUserInfo();
-    const card = new Card(data, "#element", handleCardClick, userId.id, {
+    const userData = userInfo.getUserInfo();
+    console.log(userData);
+    const card = new Card(data, "#element", handleCardClick, userData.id, {
         handleCardDelete: () => {
             const sendCard = () => {
                 api.deleteCard(card.cardId)
@@ -54,7 +55,6 @@ function createCard(data) {
         handleAddLike: () => {
             api.addLike(card.cardId)
                 .then((result) => {
-                    card.setLikes();
                     card.switchLikes(result.likes);
                 })
                 .catch((err) => {
@@ -65,7 +65,6 @@ function createCard(data) {
             api.deleteLike(card.cardId)
                 .then((result) => {
                     card.switchLikes(result.likes);
-                    card.deleteLikes();
                 })
                 .catch((err) => {
                     console.log(err);
@@ -173,9 +172,10 @@ profileAvatarBtn.addEventListener("click", () => {
 Promise.all([api.getDataUser(), api.getInitialCards()])
     .then((result) => {
         const [userData, initialCards] = result;
-        sectionCard.renderItems(initialCards);
+        console.log(userData);
         userInfo.setUserInfo({ name: userData.name, job: userData.about, userId: userData._id });
         userInfo.setUserAvatar(userData.avatar);
+        sectionCard.renderItems(initialCards);
     })
     .catch((err) => {
         console.log(err);

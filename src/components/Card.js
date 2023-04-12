@@ -37,6 +37,7 @@ export default class Card {
   }
 
   toggleLikeState() {
+    this._countLikes.textContent = this._likes.length;
     if(this.isLiked()) {
       this.setLikes();
     } else {
@@ -45,22 +46,21 @@ export default class Card {
   }
 
   removeCard() {
+    this._item.remove();
     this._item = null;
   }
 
   setLikes() {
     this._likeButton.classList.add('element__button_active');
-    this._countLikes.textContent = this._likes.length;
   }
 
   deleteLikes() {
     this._likeButton.classList.remove('element__button_active');
-    this._countLikes.textContent = this._likes.length;
   }
 
   switchLikes(likes) {
     this._likes = likes;
-    this._countLikes.textContent = likes.length;
+    this.toggleLikeState();
     if (this.isLiked()) {
       this.setLikes();
     } else {
