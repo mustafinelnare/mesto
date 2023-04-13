@@ -14,7 +14,7 @@ Interactive project **Mesto** where you can add photos, delete, increase them an
 - JavaScript
 ```
 
-**How to run??**
+**How to run?**
 
 ```
 git clone https://github.com/mustafinelnare/mesto.git
