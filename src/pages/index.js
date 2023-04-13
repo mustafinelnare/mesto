@@ -36,7 +36,6 @@ popupConfirm.setEventListeners();
 
 function createCard(data) {
     const userData = userInfo.getUserInfo();
-    console.log(userData);
     const card = new Card(data, "#element", handleCardClick, userData.id, {
         handleCardDelete: () => {
             const sendCard = () => {

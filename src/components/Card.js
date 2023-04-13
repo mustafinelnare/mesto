@@ -61,11 +61,6 @@ export default class Card {
   switchLikes(likes) {
     this._likes = likes;
     this.toggleLikeState();
-    if (this.isLiked()) {
-      this.setLikes();
-    } else {
-      this.deleteLikes();
-    }
   }
 
   isLiked() {
