@@ -21,15 +21,15 @@ git clone https://github.com/mustafinelnare/mesto.git
 ```
 
 ```
-+ npm install
+npm install
 ```
 
 ```
-+ npm run build
+npm run build
 ```
 
 ```
-+ npm run dev
+npm run dev
 ```
 
 - [Link to Figma](<https://www.figma.com/file/rJnfOCdPg42Zq1uchXsjcv/Sprint-4-(Yandex-Practicum)?node-id=0%3A1&t=MinHYTbUGYPD3Eb2-1>)
