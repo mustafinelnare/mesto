@@ -1,8 +1,4 @@
-# Project: Mesto
-
-## Demo
-
-![mesto-demo](https://i.postimg.cc/d0JZ13Pz/mesto-demo.png)
+### Project: Mesto
 
 **About**
 
